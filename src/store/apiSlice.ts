@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
-import { Category } from "../types/types"
+import { transformProductApiV1Data } from "../helpers/data-transform"
+import { Category, Product } from "../types/types"
 
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -11,7 +12,14 @@ export const apiSlice = createApi({
         url: "categories",
       }),
     }),
+    getAllFeaturedProducts: builder.query<Product[], void>({
+      query: () => ({
+        url: "products?featured=1",
+      }),
+      transformResponse: transformProductApiV1Data,
+    }),
   }),
 })
 
-export const { useGetAllCategoriesQuery } = apiSlice
+export const { useGetAllCategoriesQuery, useGetAllFeaturedProductsQuery } =
+  apiSlice
