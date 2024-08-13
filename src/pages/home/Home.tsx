@@ -1,3 +1,4 @@
+import { ActualProduct } from "../../components/ActualProduct/ActualProduct"
 import { AllCategory } from "../../components/AllCategory/AllCategory"
 import { Contacts } from "../../components/Contacts/Contacts"
 import { Decor } from "../../components/Decor/Decor"
@@ -8,6 +9,11 @@ export const Home = () => {
   return (
     <div className="home-page">
       <h1>Цветарство</h1>
+
+      <section id="actual-section">
+        <h2>Актуальное</h2>
+        <ActualProduct />
+      </section>
 
       <section id="catalog-section">
         <h2>Каталог</h2>
