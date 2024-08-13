@@ -4,7 +4,7 @@ export function transformProductApiV1Data(product: ProductApiV1[]): Product[] {
   return product.map(product => {
     let price = ""
     if (product.variants.length === 1) {
-      price = `${product.variants[0].price}`
+      price = `${product.variants[0].price}P`
     } else {
       let prices: number[] = []
       for (let variant of product.variants) {
@@ -12,7 +12,7 @@ export function transformProductApiV1Data(product: ProductApiV1[]): Product[] {
       }
       let minPrice = Math.min(...prices)
       let maxPrice = Math.max(...prices)
-      price = `${minPrice} - ${maxPrice}`
+      price = `${minPrice} - ${maxPrice}P`
     }
 
     return { ...product, price: price }
