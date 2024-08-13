@@ -18,7 +18,7 @@ export const Navbar = () => {
         <HashLink to={"/#contacts-section"}>Контакты</HashLink>
       </div>
       <div className="nav-contacts">
-        <a href="https://t.me/Tsvetarstvo">Telegram</a>
+        <a href="https://t.me/Tsvetarsrvo">Telegram</a>
         <a href="tel:79219035677">Telephone</a>
         <a href="https://wa.me/79219035677">WhatsApp</a>
       </div>

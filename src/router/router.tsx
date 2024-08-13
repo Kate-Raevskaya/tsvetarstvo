@@ -23,12 +23,8 @@ export const router = createBrowserRouter([
         children: [
           { index: true, element: <p>All Products</p> },
           {
-            path: "category/:id/products",
+            path: "category/:id",
             element: <Products />,
-          },
-          {
-            path: "category/:id/types",
-            element: <ProductTypes />,
           },
         ],
       },
