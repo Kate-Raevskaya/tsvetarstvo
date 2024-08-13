@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 
-import { Product } from "../../types/types"
+import type { Product } from "../../types/types"
 
 type Props = {
   product: Product
@@ -11,7 +11,7 @@ export const ProductCard = ({ product }: Props) => {
     <div className="product-card">
       <NavLink to={`/catalog/product/${product.id}`}>
         <div className="product-image">
-          <img src={product.image} alt="product image" />
+          <img src={product.image} alt="product" />
         </div>
         <div className="product-disc">
           <p>{product.name}</p>

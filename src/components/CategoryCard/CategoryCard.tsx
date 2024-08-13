@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 
-import { Category } from "../../types/types"
+import type { Category } from "../../types/types"
 import "./CategoryCard.scss"
 
 type Props = {
@@ -12,7 +12,7 @@ export const CategoryCard = ({ category }: Props) => {
     <div className="category-card">
       <NavLink to={`/catalog/category/${category.id}`}>
         <div className="category-image">
-          <img src={category.img} alt="caterogy image" />
+          <img src={category.img} alt="caterogy" />
         </div>
         <div className="category-disc">
           <p>{category.name}</p>

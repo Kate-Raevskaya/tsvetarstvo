@@ -1,4 +1,4 @@
-import { Product, ProductApiV1, Variant } from "../types/types"
+import type { Product, ProductApiV1 } from "../types/types"
 
 export function transformProductApiV1Data(product: ProductApiV1[]): Product[] {
   return product.map(product => {

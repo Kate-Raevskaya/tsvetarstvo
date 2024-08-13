@@ -4,7 +4,7 @@ import { CategoryCard } from "../CategoryCard/CategoryCard"
 export const AllCategory = () => {
   let { data: categories = [], isLoading } = useGetAllCategoriesQuery()
   return (
-    <>
+    <div className="all-category-container">
       {isLoading ? (
         <p>Loading...</p>
       ) : (
@@ -12,6 +12,6 @@ export const AllCategory = () => {
           <CategoryCard key={category.id} category={category} />
         ))
       )}
-    </>
+    </div>
   )
 }
