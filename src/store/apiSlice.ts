@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 import { transformProductApiV1Data } from "../helpers/data-transform"
-import { Category, Product } from "../types/types"
+import type { Category, Product } from "../types/types"
 
 export const apiSlice = createApi({
   reducerPath: "api",
