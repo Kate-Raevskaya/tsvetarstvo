@@ -1,7 +1,7 @@
 import type { Product, ProductApiV1 } from "../types/types"
 
-export function transformProductApiV1Data(product: ProductApiV1[]): Product[] {
-  return product.map(product => {
+export function transformProductApiV1Data(products: ProductApiV1[]): Product[] {
+  return products.map(product => {
     let price = ""
     if (product.variants.length === 1) {
       price = `${product.variants[0].price}P`

@@ -12,6 +12,12 @@ export const apiSlice = createApi({
         url: "categories",
       }),
     }),
+    getAllProducts: builder.query<Product[], void>({
+      query: () => ({
+        url: "products",
+      }),
+      transformResponse: transformProductApiV1Data,
+    }),
     getAllFeaturedProducts: builder.query<Product[], void>({
       query: () => ({
         url: "products?featured=1",
@@ -21,5 +27,8 @@ export const apiSlice = createApi({
   }),
 })
 
-export const { useGetAllCategoriesQuery, useGetAllFeaturedProductsQuery } =
-  apiSlice
+export const {
+  useGetAllCategoriesQuery,
+  useGetAllFeaturedProductsQuery,
+  useGetAllProductsQuery,
+} = apiSlice

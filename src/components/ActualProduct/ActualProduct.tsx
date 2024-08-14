@@ -13,7 +13,9 @@ export const ActualProduct = () => {
       {isLoading ? (
         <p>Loaiding...</p>
       ) : (
-        product.map(product => <ProductCard product={product} />)
+        product.map(product => (
+          <ProductCard key={product.id} product={product} />
+        ))
       )}
       <button
         className="all-actual-product-button"
