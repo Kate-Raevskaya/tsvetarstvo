@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom"
 
-import { useGetAllFeaturedProductsQuery } from "../../store/apiSlice"
+import { useGetAllProductsQuery } from "../../store/apiSlice"
 import { ProductCard } from "../ProductCard/ProductCard"
 
-export const ActualProduct = () => {
-  let { data: product = [], isLoading } = useGetAllFeaturedProductsQuery()
+export const ActualProducts = () => {
+  let { data: product = [], isLoading } = useGetAllProductsQuery(true)
 
   let navigate = useNavigate()
 

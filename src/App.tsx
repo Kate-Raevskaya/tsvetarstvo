@@ -1,3 +1,5 @@
+import { Suspense } from "react"
+import { ErrorBoundary } from "react-error-boundary"
 import { Outlet } from "react-router-dom"
 
 import "./App.css"
@@ -8,7 +10,11 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <Suspense fallback={<div className="loading">Загрузка...</div>}>
+        <ErrorBoundary fallback={<div>Упс:( Что-то пошло не так...</div>}>
+          <Outlet />
+        </ErrorBoundary>
+      </Suspense>
       <Footer />
     </>
   )
