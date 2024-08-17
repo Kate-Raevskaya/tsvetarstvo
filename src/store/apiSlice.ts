@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 import { transformProductApiV1Data } from "../helpers/data-transform"
-import type { Category, Product } from "../types/types"
+import type { Category, Product, Variant } from "../types/types"
 
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -12,14 +12,49 @@ export const apiSlice = createApi({
         url: "categories",
       }),
     }),
-    getAllFeaturedProducts: builder.query<Product[], void>({
-      query: () => ({
-        url: "products?featured=1",
-      }),
+    getAllProducts: builder.query<Product[], boolean>({
+      query: featured => {
+        if (featured) {
+          return "products?featured=1"
+        }
+        return "products"
+      },
       transformResponse: transformProductApiV1Data,
+    }),
+    getAllProductsBySize: builder.query<
+      Variant[],
+      { size: string; categoryId?: number }
+    >({
+      query: ({ size, categoryId }) => {
+        if (categoryId && !isNaN(categoryId)) {
+          return `variants?attribute=size:${size}&category=${categoryId}`
+        }
+        return `variants?attribute=size:${size}`
+      },
+    }),
+    getAllVariationsForSingleProduct: builder.query<Variant[], number>({
+      query: id => ({
+        url: `products/${id}/variants`,
+      }),
+    }),
+    getProductsFromCategory: builder.query<Product[], number>({
+      query: id => ({
+        url: `products?category=${id}`,
+      }),
+    }),
+    getSubcategories: builder.query<Category[], number>({
+      query: id => ({
+        url: `categories?parent=${id}`,
+      }),
     }),
   }),
 })
 
-export const { useGetAllCategoriesQuery, useGetAllFeaturedProductsQuery } =
-  apiSlice
+export const {
+  useGetAllCategoriesQuery,
+  useGetAllProductsQuery,
+  useGetAllProductsBySizeQuery,
+  useGetAllVariationsForSingleProductQuery,
+  useGetProductsFromCategoryQuery,
+  useGetSubcategoriesQuery,
+} = apiSlice

@@ -1,18 +1,18 @@
-import { ActualProduct } from "../../components/ActualProduct/ActualProduct"
+import { ActualProducts } from "../../components/ActualProducts/ActualProducts"
 import { AllCategory } from "../../components/AllCategory/AllCategory"
 import { Contacts } from "../../components/Contacts/Contacts"
 import { Decor } from "../../components/Decor/Decor"
 import { Delivery } from "../../components/Delivery/Delivery"
 import "./Home.scss"
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className="home-page">
       <h1>Цветарство</h1>
 
       <section id="actual-section">
         <h2>Актуальное</h2>
-        <ActualProduct />
+        <ActualProducts />
       </section>
 
       <section id="catalog-section">
@@ -37,3 +37,5 @@ export const Home = () => {
     </div>
   )
 }
+
+export default Home
