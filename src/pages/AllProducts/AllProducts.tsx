@@ -1,4 +1,4 @@
-import { NavLink, useSearchParams } from "react-router-dom"
+import { useSearchParams } from "react-router-dom"
 
 import { ProductCard } from "../../components/ProductCard/ProductCard"
 import { Sizes } from "../../components/Sizes/Sizes"

@@ -24,7 +24,7 @@ const Product = () => {
     useGetAllVariationsForSingleProductQuery(productId)
 
   if (isLoading) {
-    return <></>
+    return <p>Загрузка...</p>
   }
 
   let variantId = Number.isNaN(variant) ? variants[0].id : variant

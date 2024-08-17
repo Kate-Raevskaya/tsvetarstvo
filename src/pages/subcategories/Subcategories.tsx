@@ -2,7 +2,7 @@ import { NavLink, useParams } from "react-router-dom"
 
 import { Sizes } from "../../components/Sizes/Sizes"
 import { useGetSubcategoriesQuery } from "../../store/apiSlice"
-import { Category } from "../../types/types"
+import type { Category } from "../../types/types"
 
 type Props = {
   subcategories: Category[]

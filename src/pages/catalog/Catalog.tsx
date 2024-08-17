@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom"
 
 import { useGetAllCategoriesQuery } from "../../store/apiSlice"
-import { Category } from "../../types/types"
+import type { Category } from "../../types/types"
 
 type Props = {
   categories: Category[]

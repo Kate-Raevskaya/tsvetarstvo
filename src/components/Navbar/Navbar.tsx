@@ -18,13 +18,13 @@ export const Navbar = () => {
         <HashLink to={"/#contacts-section"}>Контакты</HashLink>
       </div>
       <div className="nav-contacts">
-        <a href="https://t.me/Tsvetarsrvo" target="_blank">
+        <a href="https://t.me/Tsvetarsrvo" target="_blank" rel="noreferrer">
           Telegram
         </a>
-        <a href="tel:79219035677" target="_blank">
+        <a href="tel:79219035677" target="_blank" rel="noreferrer">
           Telephone
         </a>
-        <a href="https://wa.me/79219035677" target="_blank">
+        <a href="https://wa.me/79219035677" target="_blank" rel="noreferrer">
           WhatsApp
         </a>
       </div>
